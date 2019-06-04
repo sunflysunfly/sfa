@@ -42,6 +42,7 @@
 import axios from 'axios';
 import { Indicator,Toast } from 'mint-ui';
 import "../assets/font/iconfont.css";
+import service from '../service/index';
 
 export default {
   name: "login",
@@ -92,7 +93,7 @@ export default {
       //   Indicator.close();
       // },2000)
       // 发送ajax请求
-      axios.get('/login.json')
+      service.login('/login.json')
       .then(res=>{
         if(res.data.code == 1){
           if(this.rememb){
